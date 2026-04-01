@@ -1,8 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
+import cors from 'cors';
+
 
 const app = express();
+app.use(cors());
 
 
 app.get('/', (req, res) => {
@@ -10,11 +13,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/twitter', (req, res) => {
-    res.send("this is twitter route")
+    res.json({"message": "this is twitter route"});
 })
 
 app.get('/login', (req, res) => {
-    res.send("<h1>this is the login route</h1>")
+    res.json({"message": "this is login route"});
 })
 const githubData = {
   "login": "mayurch25",
@@ -53,13 +56,13 @@ const githubData = {
 }
 
 app.get('/github', (req, res) => {
-    res.send(githubData);
+    res.json(githubData);
 })
 
 app.get('/youtube', (req, res) => {
-    res.send("<h2>This is the youtube.</h2>")
+    res.json({"message": "this is youtube route"});
 })
-
-app.listen(process.env.PORT, () => {
-    console.log(`server running at http://localhost:${process.env.PORT}`);
+const Port = process.env.PORT || 4000;
+app.listen(Port, () => {
+    console.log(`server running at http://localhost:${Port}`);
 })
