@@ -1,0 +1,16 @@
+{
+  "name": "backend-test",
+  "version": "1.0.0",
+  "description": "simple backend app for test",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Mayur chaudhari",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  }
+}
